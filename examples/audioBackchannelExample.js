@@ -35,7 +35,7 @@ client.connect(url, { connection: "tcp" })
     // Step 6: Send audio backchannel
     // Edit audio encoding config of camera to ALAW because test file is alaw file 
     // this run when: camera is supported ONVIF backchannel
-    fs.readFile("./examples/new-audio.alaw", async (error, data) => {
+    fs.readFile("./examples/new-audio.wav", async (error, data) => {
       if (error) {
         console.log("ERROR - unable to open audio file")
         exit();
