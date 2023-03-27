@@ -11,9 +11,9 @@ const fs = require("fs");
 const { exit } = require("process");
 
 // User-specified details here.
-const url = "rtsp://10.61.185.18/Streaming/Channels/101/?transportmode=unicast&profile=Profile_1";
+const url = "rtsp://admin:user1234@10.60.1.167:554/Streaming/Channels/102?transportmode=unicast&profile=Profile_2";
 const username = "admin";
-const password = "Admin123";
+const password = "user1234";
 
 // Add the ONVIF Audio Backchannel Header
 const header = { "Require": "www.onvif.org/ver20/backchannel" };
@@ -35,7 +35,7 @@ client.connect(url, { connection: "tcp" })
     // Step 6: Send audio backchannel
     // Edit audio encoding config of camera to ALAW because test file is alaw file 
     // this run when: camera is supported ONVIF backchannel
-    fs.readFile("./examples/audio.alaw", async (error, data) => {
+    fs.readFile("./examples/new-audio.alaw", async (error, data) => {
       if (error) {
         console.log("ERROR - unable to open audio file")
         exit();
